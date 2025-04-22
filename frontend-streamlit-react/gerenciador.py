@@ -5,7 +5,7 @@ import requests
 from datetime import datetime, timedelta
 import time
 import streamlit.components.v1 as components
-API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = "https://gerenciador-api.fly.dev"
 from streamlit_autorefresh import st_autorefresh
 
 
@@ -148,7 +148,7 @@ def mostrar_painel_fixo(api_url, secao):
 
 
 def mostrar_pagina_chamar():
-    API_BASE_URL = "http://127.0.0.1:8000"
+  
 
     # Inicializa os campos
     if "usuario_gerenciador" not in st.session_state:
@@ -477,7 +477,7 @@ def mostrar_pagina_imprimir():
 def mostrar_pagina_senhas_chamadas():
     st.subheader("📋 Histórico de Senhas Chamadas")
 
-    API_BASE_URL = "http://127.0.0.1:8000"
+   
     secao = st.session_state.get("secao", None)
 
     if not secao:
