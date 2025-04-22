@@ -16,8 +16,8 @@ COPY . /app
 # Instala as dependências do projeto
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expõe a porta usada pelo Streamlit para o Fly.io
+# Expõe a porta que será usada pela API
 EXPOSE 8080
 
-# Executa o Streamlit na porta 8080 e endereço 0.0.0.0
-CMD ["streamlit", "run", "app.py", "--server.port=8080", "--server.address=0.0.0.0"]
+# Executa o FastAPI com Uvicorn na porta correta
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
